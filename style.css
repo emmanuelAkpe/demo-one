@@ -1,0 +1,438 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: sans-serif;
+
+
+}
+html{
+  scroll-behavior: smooth;
+}
+
+
+
+/*-------------------------------------- Navbar-------------------- */
+
+nav {
+  height: 10vh;
+  background: #9c9075;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.logo{
+  color: white;
+  font-family: 'Lobster', cursive;
+  font-size: 25px;
+  cursor: pointer;
+
+
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  width: 50%;
+  height: 100%;
+  justify-content: space-around;
+  align-items: center;
+  margin-left: auto;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.nav-links li a:hover{
+  color: rgb(22, 2, 2);
+}
+.nav-links li a button{
+  border: none;
+  border-radius: 10px;
+  padding: 5px 10px;
+  background-color: antiquewhite;
+  color: rgb(58, 57, 57);
+  font-size: 15px;
+}
+
+
+@media screen and (max-width: 768px) {
+  .line {
+    width: 30px;
+    height: 3px;
+    background: white;
+    margin: 5px;
+  }
+  nav {
+    position: relative;
+    position: sticky;
+    top: 0;
+  }
+
+  .hamburger {
+    position: absolute;
+    cursor: pointer;
+    right: 5%;
+    top: 50%;
+    transform: translate(-5%, -50%);
+    z-index: 2;
+  }
+
+  .nav-links {
+    position: fixed;
+    background: #9c9075;
+    height: 100%;
+    width: 100%;
+    padding-top: 25rem;
+    flex-direction: column;
+    clip-path: circle(100px at 90% -10%);
+    -webkit-clip-path: circle(100px at 90% -10%);
+    transition: all 1s ease-out;
+    pointer-events: none;
+
+  }
+  .nav-links.open {
+    clip-path: circle(1000px at 90% -10%);
+    -webkit-clip-path: circle(1000px at 90% -10%);
+    pointer-events: all;
+  }
+  
+  .nav-links li {
+    opacity: 0;
+  }
+  .nav-links li a {
+    font-size: 25px;
+    padding-top: 25px;
+  }
+  .nav-links li:nth-child(1) {
+    transition: all 0.5s ease 0.2s;
+  }
+  .nav-links li:nth-child(2) {
+    transition: all 0.5s ease 0.4s;
+  }
+  .nav-links li:nth-child(3) {
+    transition: all 0.5s ease 0.6s;
+  }
+  li.fade {
+    opacity: 1;
+  }
+}
+
+  /*-------------------------------------- Navbar-------------------- */
+
+
+.intro {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.1rem;
+  color: white;
+  padding: 3rem 3rem;
+  background: linear-gradient(45deg, #9c9075 20%, #3c3c3c 20% 50%, #7a4240 50% 80%, #405e50 80%);
+}
+.left, .right{flex: 1;}
+.left img{
+  width: 500px;
+  height: 500px;
+}
+.right h1{
+  font-size: 3.5rem;
+  width: 100%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.right p{
+  font-size: 1.5rem;
+  color: #e4ebf0;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  width: 95%;
+  padding: 1.5rem;
+}
+
+@media (max-width: 700px) {
+  .intro{
+    padding: 8rem 5px;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+  .right h1{
+    padding: auto;
+  }
+  .intro::before{
+    content: "kofi";
+    height: 8rem;
+    opacity: 0;
+  }
+  .left img { 
+    width: 80%;
+    object-fit: cover;
+   }
+  .right h1 { font-size: 1.5rem; }
+  .right p { font-size:  1rem; }
+}
+  /* -------------------Hero Section------------------------------------- */
+
+  /* -----------------------------About--------------------------------- */
+
+.about h1{
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding-top: 10px;
+  
+}
+
+.container {
+  width: 90%;
+  margin: 50px auto;
+}
+
+.card-header img{
+  width:150px;
+  height:150px;
+}
+.heading {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 50px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-flow: wrap;
+}
+
+.card {
+  width: 20%;
+  background: #fff;
+  margin-bottom: 50px;
+  transition: 0.3s;
+}
+
+.card-header {
+  text-align: center;
+  padding: 50px 10px;
+}
+
+
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px -10px rgba(0, 0, 0, 0.25);
+}
+
+@media screen and (max-width: 1000px) {
+  .card {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .container {
+    width: 100%;
+  }
+
+  .heading {
+    padding: 20px;
+    font-size: 20px;
+  }
+
+  .card {
+    width: 80%;
+  }
+}
+
+  /* -----------------------------About--------------------------------- */
+
+/* -----------------------------How it works--------------------------------- */
+.how-it-works{
+  margin: 50px auto;
+}
+
+.how-it-works img{
+  width: 80px;
+  margin-bottom: 20px;
+ 
+}
+.how-it-works ul{
+  text-align: center;
+}
+
+.how-it-works p{
+  border-top: 1px solid #9c9075;
+}
+
+.how-it-works ul li{
+  display: inline-block;
+  width: 200px;
+  position: relative;
+
+}
+
+.how-it-works ul li .bi{
+  background-color: #9c9075;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+/* -----------------------------How it works--------------------------------- */
+
+
+
+  /*-------------------------------------- App-------------------- */
+  .loan-calculator {
+    font-family: "Roboto", sans-serif;
+    width: 600px;
+    margin: 24px auto;
+    background: #fff;
+    box-shadow: 0 12px 50px -11px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    color: #14213d;
+    overflow: hidden;
+  }
+  
+  .loan-calculator,
+  .loan-calculator * {
+    box-sizing: border-box;
+  }
+  
+  .loan-calculator .top {
+    background: #3c3c3c;
+    color: #fff;
+    padding: 32px;
+  }
+  
+  .loan-calculator .top h2 {
+    margin-top: 0;
+  }
+  
+  .loan-calculator form {
+    display: flex;
+    gap: 8px;
+    justify-content: space-between;
+  }
+  
+  .loan-calculator .title {
+    margin-bottom: 16px;
+  }
+  
+  .loan-calculator form input {
+    font-size: 20px;
+    padding: 8px 24px;
+    width: 100%;
+  }
+  
+  .loan-calculator .result {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .loan-calculator .result .left {
+    width: 100%;
+    padding: 8px 32px;
+  }
+  
+  .loan-calculator .left h3 {
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 8px;
+  }
+  
+  .loan-calculator .result .value {
+    font-size: 30px;
+    font-weight: 900;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(20, 33, 61, 0.2);
+  }
+  
+  .loan-calculator .result .value::before {
+    content: "GH¢";
+    font-size: 18px;
+    font-weight: 400;
+    margin-right: 6px;
+    opacity: 0.4;
+  }
+  
+  .loan-calculator .calculate-btn {
+    background: #405e50;
+    color: #fff;
+    border: none;
+    padding: 8px 32px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 900;
+    cursor: pointer;
+    margin: 24px 0;
+  }
+  
+  .loan-calculator .right {
+    width: 50%;
+  }
+  
+  @media (max-width: 650px) {
+    .loan-calculator {
+      width: 90%;
+      max-width: 500px;
+    }
+  
+    .loan-calculator form {
+      flex-direction: column;
+      gap: 20px;
+    }
+  
+    .loan-calculator .result {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+  .footer{
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 5rem;
+  }
+
+  .footer hr{
+    color: #9c9075;
+    margin-bottom: 2rem;
+
+  }
+
+  .footer .link{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+  }
+
+  .footer a{
+    text-decoration: none;
+    color:    #9c9075;
+    font-size: 15px;
+  }
+
+  @media (max-width: 650px){
+
+    .footer .link{
+      flex-direction: column;
+      gap: 5px;
+  
+    }
+  }
